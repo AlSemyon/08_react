@@ -16,27 +16,14 @@
 <div class="container">
     <ul class="list-group"><li class="list-group-item">1. Создать ES6 компонент App в котором вывести<ul><li>в элементе h1 - приветствие Hello ИМЯ (ИМЯ передать через props )</li><li>в элементе  h2 - текущее время</li></ul></li></ul>
 
-
     <div id="root"></div>
 
 </div>
 <script type="text/babel">
 
-    class App extends React.Component {
-        render() {
-            const data = ['vasya', 'kolya','petya'];
-            const listItems = data.map((item) => <li key={item}>Hello {item}, current date = {new Date().toDateString()}</li>);
-            console.log(listItems)
-            return (
-                <ul>
-                    {listItems}
-                </ul>
-            )
-        }
-    }
- 
+
     ReactDOM.render(
-        <App/>,
+        <h1>Hello La11</h1>,
         document.getElementById('root')
     );
 </script>

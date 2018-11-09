@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Lab_2</title>
+    <title>Lab_1</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style.css">
     <script src="https://unpkg.com/react@16.2.0/umd/react.development.js"></script>
@@ -12,8 +12,9 @@
      <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.38/browser.js"></script>
 </head>
 <body>
+
 <div class="container">
-     <ul class="list-group"><li class="list-group-item">1. Создать ES6 компонент App в котором вывести<ul><li> stateless компонент Hello  - выводит Hello ИМЯ <br>!!! ИМЯ передать через props в методе ReactDOM.render в компонент App, и через него в компонент Hello</li><li>stateless компонент Time - выводит текущее время</li></ul></li></ul>
+    <ul class="list-group"><li class="list-group-item">1. Создать ES6 компонент App в котором вывести<ul><li>в элементе h1 - приветствие Hello ИМЯ (ИМЯ передать через props )</li><li>в элементе  h2 - текущее время</li></ul></li></ul>
 
 
     <div id="root"></div>
@@ -23,8 +24,7 @@
 
     class App extends React.Component {
         render() {
-            const data = this.props.data;
-            const listItems = data.map((item) => <Hello  key={item} name={item}/>);
+            const listItems = this.props.map((item) =><li>Hello {item}</li>)
             console.log(listItems)
             return (
                 <ul>
@@ -33,36 +33,11 @@
             )
         }
     }
-
-    class Hello extends React.Component {
-        render() {
-            return (
-                <li> Hello 1 {this.props.name} 
-                    <Time/>
-                </li>
-            )
-        }
-    }
-
-    class Time extends React.Component {
-        getTime() {
-            const date = new Date();
-
-            return date.getMinutes() + date.getSeconds();
-        }
-
-        render() {
-            return (
-                <div>current date = {this.getTime()}</div>
-            )
-        }
-    }
  
     ReactDOM.render(
         <App data={['vasya', 'kolya','petya']}/>,
         document.getElementById('root')
     );
-
 </script>
 
 </body>

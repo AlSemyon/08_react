@@ -21,47 +21,15 @@
 </div>
 <script type="text/babel">
 
-    class App extends React.Component {
-        render() {
-            const data = this.props.data;
-            const listItems = data.map((item) => <Hello  key={item} name={item}/>);
-            console.log(listItems)
-            return (
-                <ul>
-                    {listItems}
-                </ul>
-            )
-        }
-    }
 
-    class Hello extends React.Component {
-        render() {
-            return (
-                <li> Hello 1 {this.props.name} 
-                    <Time/>
-                </li>
-            )
-        }
-    }
 
-    class Time extends React.Component {
-        getTime() {
-            const date = new Date();
 
-            return date.getMinutes() + date.getSeconds();
-        }
 
-        render() {
-            return (
-                <div>current date = {this.getTime()}</div>
-            )
-        }
-    }
- 
     ReactDOM.render(
-        <App data={['vasya', 'kolya','petya']}/>,
+        <h1>Hello Lab 2</h1>,
         document.getElementById('root')
     );
+
 
 </script>
 

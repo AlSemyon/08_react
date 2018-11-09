@@ -24,19 +24,20 @@
 
     class App extends React.Component {
         render() {
-            const data = ['vasya', 'kolya','petya'];
-            const listItems = data.map((item) => <li key={item}>Hello {item}, current date = {new Date().toDateString()}</li>);
-            console.log(listItems)
+            console.log(props)
             return (
                 <ul>
-                    {listItems}
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
                 </ul>
             )
         }
     }
  
     ReactDOM.render(
-        <App/>,
+        <App data={['vasya', 'kolya','petya']}/>,
         document.getElementById('root')
     );
 </script>

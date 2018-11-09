@@ -24,7 +24,7 @@
     class App extends React.Component {
         render() {
             const data = this.props.data;
-            const listItems = data.map((item) => <Hello  key={item} name={item}/>);
+            const listItems = data.map((item) => <Hello name={item}/>);
             console.log(listItems)
             return (
                 <ul>
@@ -37,7 +37,7 @@
     class Hello extends React.Component {
         render() {
             return (
-                <li> Hello 1 {this.props.name} 
+                <li  key={this.props.name}> Hello 1 {this.props.name} 
                     <Time/>
                 </li>
             )
@@ -45,15 +45,9 @@
     }
 
     class Time extends React.Component {
-        getTime() {
-            const date = new Date();
-
-            return date.getMinutes() + date.getSeconds();
-        }
-
         render() {
             return (
-                <div>current date = {this.getTime()}</div>
+                <div>current date = {new Date().toDateString()}</div>
             )
         }
     }

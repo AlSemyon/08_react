@@ -45,15 +45,9 @@
     }
 
     class Time extends React.Component {
-        getTime() {
-            const date = new Date();
-
-            return date.getMinutes() + date.getSeconds();
-        }
-
         render() {
             return (
-                <div>current date = {this.getTime()}</div>
+                <div>current date = {new Date().toDateString()}</div>
             )
         }
     }
