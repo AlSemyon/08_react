@@ -23,27 +23,12 @@
 <script type="text/babel">
 
     class App extends React.Component {
-        constructor(props) {
-            super(props);
-             
-             this.state = {
-                 clicked: false
-             }
-
-             this.handleClicked = this.handleClicked.bind(this)
-
-        }
-
-        handleClicked() {
-            this.setState({clicked: !this.state.clicked})
-        }
-
        render(){
            return(
                 <div className="container">
                     <div className="btn-box">
                         <input className="toggle-input" type="checkbox" />
-                        <button onClick={this.handleClicked} className={this.state.clicked ? "toggle-btn  toggle-btn-on": "toggle-btn toggle-btn-off"}  />
+                        <button className="toggle-btn toggle-btn-off"  />
                     </div>
                 </div>
             )

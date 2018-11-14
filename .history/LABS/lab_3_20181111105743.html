@@ -32,8 +32,8 @@
 
         class Checkbox extends React.Component {
         render() {
-            return (<div>
-                <label className={this.props.className}
+            <div>
+                <label className={this.state.checked? 'checked': ''}
                         htmlFor="ch1">
                             My checkbox
                      </label>
@@ -41,7 +41,7 @@
                         type="checkbox"
                         onChange={this.props.handleCheck}
                     />
-            </div>)
+            </div>
         }
     }
 
@@ -62,7 +62,10 @@
 
         render(){
             return (
-                <Checkbox handleCheck={this.handleCheck} className={this.state.checked? 'checked': ''}/>
+
+
+                <Checkbox handleCheck={this.handleCheck}/>
+
             )
         }
     }

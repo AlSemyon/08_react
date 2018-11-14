@@ -17,58 +17,41 @@
 
 <body>
     <div class="container">
-        <ul class="list-group">
-            <li class="list-group-item">
-                1. Перенести checkbox в отдельный stateless компонент Checkbox</li>
-            <!-- Stateful
-         Stateless -->
-        </ul>
-
-
         <div id="root"></div>
 
     </div>
     <script type="text/babel">
 
         class Checkbox extends React.Component {
+
+        constructor(props) {
+            super(props);
+            this.state = {
+                checked: false
+            }
+            this.toggleCheck = this.toggleCheck.bind(this)
+        }
+
+        toggleCheck() {
+            this.setState( ({checked}) => ({checked: !checked}))
+        }
+
         render() {
             return (<div>
-                <label className={this.props.className}
+                <label className={this.checked ? 'checked' : ''}
                         htmlFor="ch1">
                             My checkbox
                      </label>
                 <input id="ch1" 
                         type="checkbox"
-                        onChange={this.props.handleCheck}
+                        onChange={this.toggleCheck}
                     />
             </div>)
         }
     }
 
-
-    class App extends React.Component {
-
-       constructor(props) {
-            super(props);
-            this.state = {
-                checked: false
-            }
-            this.handleCheck = this.handleCheck.bind(this)
-        }
-
-            handleCheck(){
-                this.setState({checked: !this.state.checked})
-            }
-
-        render(){
-            return (
-                <Checkbox handleCheck={this.handleCheck} className={this.state.checked? 'checked': ''}/>
-            )
-        }
-    }
-
 ReactDOM.render(
-        <App />,
+        <Checkbox />,
          document.getElementById('root')
 );
 

@@ -35,7 +35,8 @@
         }
 
         handleClicked() {
-            this.setState({clicked: !this.state.clicked})
+            console.log(e, this.state)
+            // this.setState
         }
 
        render(){
@@ -43,7 +44,7 @@
                 <div className="container">
                     <div className="btn-box">
                         <input className="toggle-input" type="checkbox" />
-                        <button onClick={this.handleClicked} className={this.state.clicked ? "toggle-btn  toggle-btn-on": "toggle-btn toggle-btn-off"}  />
+                        <button onClick={this.handleClicked} className="toggle-btn toggle-btn-off"  />
                     </div>
                 </div>
             )

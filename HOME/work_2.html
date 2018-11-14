@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Homework_2</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <script src="https://unpkg.com/react@16.2.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.2.0/umd/react-dom.development.js"></script>
+    <!--
+        <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+     -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.38/browser.js"></script>
+     <style> .checked {text-decoration: line-through}</style>
+
+</head>
+<body>
+<div class="container">
+      <ul class="list-group"><li class="list-group-item">1. Вывести список пользователей - имя и checkbox напротив каждого имени.<br>
+        При выборе пользователя с помощью соответствующего checkbox, <span class="text-danger">имя только выбранного пользователя</span> должно быть перечеркнутым (класс "checkbox"), и checkbox должен быть включенным только у выбранного пользователя.
+      </li>
+       <li class="list-group-item">2. Для вывода создать 2 компонента  - UserList, User.<br>State, функция-обработчик должены быть в компоненте UserList и передаваться в дочерний комронент User через props</li>
+
+    </ul>
+
+    <div id="root"></div>
+
+</div>
+<script type="text/babel">
+
+    const users = [
+        {id: 1, name: "Bill"},
+        {id: 2, name: "Tom"},
+        {id: 3, name: "Pete"},
+        {id: 4, name: "Ashley"},
+        {id: 5, name: "Greg"}
+    ];
+
+
+class UserList  extends React.Component {
+
+}
+
+ReactDOM.render(<UserList users={users}/>, document.getElementById('root'));
+
+
+
+</script>
+
+</body>
+</html>

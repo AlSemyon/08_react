@@ -39,11 +39,13 @@
         }
 
        render(){
+           
+           let className ="toggle-btn" + this.state.clicked ? "toggle-btn toggle-btn-on" : "toggle-btn toggle-btn-off";
            return(
                 <div className="container">
                     <div className="btn-box">
                         <input className="toggle-input" type="checkbox" />
-                        <button onClick={this.handleClicked} className={this.state.clicked ? "toggle-btn  toggle-btn-on": "toggle-btn toggle-btn-off"}  />
+                        <button onClick={this.handleClicked} className={className}  />
                     </div>
                 </div>
             )

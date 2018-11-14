@@ -11,7 +11,7 @@
     <script src="https://unpkg.com/react-dom@16.2.0/umd/react-dom.development.js"></script>
     <!--  <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>   -->
      <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.38/browser.js"></script>
-
+    <script src="test.js"></script>
     </head>
 <body>
 <div class="container">
@@ -23,27 +23,12 @@
 <script type="text/babel">
 
     class App extends React.Component {
-        constructor(props) {
-            super(props);
-             
-             this.state = {
-                 clicked: false
-             }
-
-             this.handleClicked = this.handleClicked.bind(this)
-
-        }
-
-        handleClicked() {
-            this.setState({clicked: !this.state.clicked})
-        }
-
        render(){
            return(
                 <div className="container">
                     <div className="btn-box">
                         <input className="toggle-input" type="checkbox" />
-                        <button onClick={this.handleClicked} className={this.state.clicked ? "toggle-btn  toggle-btn-on": "toggle-btn toggle-btn-off"}  />
+                        <button className="toggle-btn toggle-btn-off"  />
                     </div>
                 </div>
             )
